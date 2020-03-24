@@ -49,6 +49,8 @@
 
 \usepackage{enumerate} % To modify the enumerate environment
 
+\usepackage{amsmath} % Defines \implies
+
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT INFORMATION
 %----------------------------------------------------------------------------------------
@@ -84,12 +86,11 @@
 %------------------------------------------------
 
 \subsection*{Lösung}
+Ich vermute, dass die Schüler normalerweise kein Problem damit haben, dass die Wiese nass wird, wenn es regnet und wenn kein Dach oder Zelt auf der Wiese steht. Das beobachten wir im Alltag und es ist naheliegend, dass Objekte, auf denen Wasser fällt, nass werden. Das einzige, was ich mir ausdenken kann, ist, dass unter den Salamandern  die Wiese trocken bleibt, und wenn es zu viele davon gibt, dann bleibt die ganze Wiese trocken, obwohl es regnet.
 
-\begin{enumerate}
-\item Kann es nicht sein, dass der eine Salamander einen besonders schlechten Tag hat, und sich nicht mal über eine nasse Wiese freut?
-\item Kann es nicht sein, dass Salamander eigentlich den Regen hassen und nur nasse Wiese mögen? Dann ein unendlich langer Regen macht sie sicher nicht glücklich.
-\item Kann es nicht sein, dass es so viele Salamander auf die Wiese kommen, dass kein Tropfen auf die Wiese kommt? Dann wäre die Wiese auch nach dem Regen trocken.
-\end{enumerate}
+Bei der zweiten Aussage aber, wo Emotionen von lebendigen Wesen eine Rolle spielen, erwarte ich einige Fragen. Zum Beispiel, freuen sich wirklich alle Salamander jedes Mal, wenn die Wiese nass ist? Was, wenn ein Salamander einen besorders schlechten Tag hatte, und nicht mal eine nasse Wiese ihn aufmuntern kann?
+
+Bei der zusammengesetzten Aussage "Wenn es regnet, dann freuen sich die Salamander" werden einige Schüler wahrscheinlich zweifeln, dass diese auch gilt. Die Schüler können argumentieren, dass die Salamander sich über eine nasse Wiese zwar freuen, aber den Regen selber vielleicht hassen und warten immer, bis der Regen vorbei ist, um sich zu freuen.
 
 %----------------------------------------------------------------------------------------
 
@@ -103,12 +104,22 @@
 
 \subsection*{Lösung}
 
-\begin{enumerate}
-\item "Wenn es 00 Minuten ist, dann läuten die Kirchenglocken" -- "Wenn die Kirchenglocken läuten, schrecken die Vögel auf" \\
-Warum es gut ist: Kirchenglocken läuten auch in anderen Fällen. \\
-Warum es schlecht ist: Läuten Kirchenglocken auch nachts? Haben alle Vögel eine Kirche in der Nähe? Ich kann auf dem Everest um Punkt 1 stehen und keine Vögel, die aufschrecken, beobachten. Haben sich die Vögel immer noch nicht daran gewöhnt, einmal pro Stunde aufgescheucht zu werden?
-\item "Wenn man etwas esssen möchte, dann muss jemand zuerst Geschirr spülen" \\
-Warum es schlecht ist: Haben wir denn nicht genug Geschirr?
+Wir werden mit folgenden Aussagen arbeiten:
+\begin{enumerate}[A:]
+\item Die Sonne scheint.
+\item Es ist hell.
+\item Marissa die Leseratte liest ein Buch.
 \end{enumerate}
+\begin{center}
+	\includegraphics[width=0.5\columnwidth]{Marissa.png}
+\end{center}
 
+Betrachten wir die Aussage \(A \implies B\), oder umgangssprachlich "Wenn die Sonne scheint, dann ist es hell". Was bedeutet diese Aussage? Ziemlich genau das, was wird jeden Tag beobachten können. Tagsüber, wenn die Sonne scheint, ist es tatsächlich hell. Nachts, wenn die Sonne nicht scheint, kann es trotzdem hell sein, wenn, zum Beispiel, eine Aussenleuchte leuchtet. Das einzige, was wir nicht beobachten, ist, wenn die Sonne scheint und gleichzeitig dunkel ist. Die Aussage \(A \implies B\) beschreibt also unsere Beobachtung.
+
+Betrachten wir die Aussage \(B \implies C\), oder umgangssprachlich "Wenn es hell ist, liest Marissa die Leseratte ein Buch". Das bedeutet, dass Marissa die Leseratte grundsätzlich immer liest. Im dunklen kann sie sich eine kurze Pause nehmen, zum Beispiel zum Schlafen. Aber wenn es hell ist, nichts und niemand kann sie davon abhalten, ihr Buch weiter zu lesen.
+
+Gilt nun die Aussage \(A \implies C\), oder umgangssprachlich "Wenn die Sonne scheint, dann liest Marissa die Leseratte ein Buch", wenn wir \(A \implies B\) und \(B \implies C\) annehmen?
+
+Die Aussage \(A \implies C\) gilt, und das können wir auch intuitiv sehen. Wenn die Sonne scheint, dann muss es wegen \(A \implies B\) auch hell sein. Wenn es hell ist, dann liest wegen \(B \implies C\) Marissa die Leseratte zwingend ein Buch. Es kann also nicht vorkommen, dass die Sonne scheint, und Marissa die Leseratte nicht liest.
+Wenn die Sonne nicht scheint, dann kann es hell oder dunkel sein. Wenn es hell ist, dann liest Marissa die Leseratte ihr Buch. Wenn es dunkel ist, dann kann Marissa die Leseratte trotzdem ein Buch lesen, oder auch etwas anderes machen.
 \end{document}
