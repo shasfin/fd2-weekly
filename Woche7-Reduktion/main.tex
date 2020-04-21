@@ -125,26 +125,57 @@ Den Algorithmus \(A\) konstruieren wir folgendermassen: Wir benutzen den Algorit
 \begin{problem}
 Wir haben alle schon mal von der Quadratur des Kreises gehört und dass es unmöglich sein soll. Genauer, das Problem \(Q_{\bigcirc}\) besteht darin, mit Zirkel und Lineal in endlich vielen Schritten aus einem gegebenem Kreis ein Quadrat mit gleichem Flächeninhalt zu konstruieren. Der Beweis, dass es keinen ZL-Algorithmus (Zirkel-Lineal Algorithmus) für \(Q_{\bigcirc}\) gibt, ist nicht trivial und wir glauben an dieser Stelle den Mathematikern, die es bewiesen haben.
 
-Beweise mittels Reduktion, dass es keinen ZL-Algorithmus zur ''Triangularisierung'' des Kreises existiert. Das Problem bezeichenen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich viele Schritten ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-QuadraturDesKreises1.png}
+	\caption{Quadratur des Kreises: konstruiere mit Zirkel und Lineal ein Quadrat mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
+\end{figure}
+
+Betrachte das Problem der ''Triangularisierung'' des Kreises. Dieses Problem bezeichenen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich viele Schritten ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises1.png}
+	\caption{''Triangularisierung'' des Kreises: konstruiere mit Zirkel und Lineal ein rechtwinckliges gleichschenkliges Dreieck mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
+\end{figure}
+Beweise mittels Reduktion, dass es keinen ZL-Algorithmus zur ''Triangularisierung'' des Kreises existiert.
 \end{problem}
 
 %------------------------------------------------
 
 \subsection*{Musterlösung}
 
-Wir wissen, dass es keinen ZL-Algorithmus für \(Q_{\bigcirc}\) gibt und möchten diese Tatsache benutzen, um zu zeigen, dass es keinen ZL-Algorithmus für \(D_{\bigcirc}\) gibt. Wie bei der Methode vom indirekten Beweis, nehmen wir das Gegenteil von dem an, was wir beweisen möchten, und folgern daraus etwas Falsches. Wenn wir es schaffen, dann muss unsere Annahme falsch gewesen sein, und wir bewiesen haben, was wir beweisen wollten.
+Wir wissen, dass es keinen ZL-Algorithmus für \(Q_{\bigcirc}\) gibt und möchten diese Tatsache benutzen, um zu zeigen, dass es keinen ZL-Algorithmus für \(D_{\bigcirc}\) gibt.
+
+Wir gehen dabei vor wie bei der Methode vom indirekten Beweis: Wir nehmen das Gegenteil von dem an, was wir beweisen möchten, und folgern daraus etwas Falsches. Das impliziert, dass unsere Annahme falsch sein muss, und somit haben wir genau das bewiesen, was wir wirklich beweisen wollten.
 
 In diesem Fall nehmen wir also an, dass wir einen ZL-Algorithmus für \(D_{bigcirc}\) haben und konstruiren daraus einen ZL-Algorithmus für \(Q_{bigcirc}\). Da es keinen solchen Algorithmus gibt, muss unsere Annahme falsch sein.
 
-Wir wollen also \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\) zeigen, d.h. wir reduzieren \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\). Dafür nehmen wir an, dass es einen ZL-Algorithmus \(A_d\) gibt, welcher \(D_{\bigcirc}\) löst, und konstruiren daraus einen ZL-Algorithmus \(A_q\) für \(Q_{\bigcirc}\).
+Wir reduzieren also \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\) und zeigen \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\). Aus \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\) und \(Q_{\bigcirc}\) unlösbar folgern wir, dass \(D_{\bigcirc}\) auch unlösbar sein muss.
 
-KONSTRUIERE EINEN QUADRAT MIT GLEICHEM FLÄCHENINHALT AUS RECHTWINKLIGEM GLEICHSCHENKLIGEM DREIECK (+BILDER)
+Sei \(A_d\) ein ZL-Algorithmus, welcher \(D_{\bigcirc}\) löst. Diesen Algorithmus benutzen wir, um einen ZL-Algorithmus \(A_q\) für \(Q_{\bigcirc}\) zu konstruieren. Dafür müssen wir mit Zirkel und Lineal in endlich vielen Schritten ein Quadrat konstruieren, welches den gleichen Flächeninhalt von einem gegebenem rechtwinkligem gleichschenkligem Dreieck hat.
 
-Aus \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\) und \(Q_{\bigcirc}\) unlösbar folgern wir, dass \(D_{\bigcirc}\) auch unlösbar sein muss.
+Möglich wäre folgende Abfolge:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises2.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises5.png}
+\end{figure}\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises6.png}
+\end{figure}\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises7.png}
+\end{figure}
 
-\begin{center}
-	\includegraphics[width=0.5\columnwidth]{swallow.jpg} % Example image
-\end{center}
+Somit haben wir den ZL-Algorithmus \(A_q\) aus \(A_d\) konstruiert, welcher die Quadratur der Kreises findet. Da ein solcher Algorithmus nicht existiert, haben wir bewiesen, dass \(A_d\) nicht existieren kann.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Negativ.png}
+	\caption{Reduktion von \(Q_{bigcirc}\) auf \(D_{bigcirc}\).}
+\end{figure}
 
 
 \end{document}
