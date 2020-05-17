@@ -84,9 +84,9 @@
 \begin{problem}
 	Nehmen wir an, wir haben einen Algorithmus B, um den Logarithmus einer beliebigen Zahl \(x \neq 0\) zur Basis \(b\) zu berechnen, d.h. \(log_b(x)\). Entwickle mittels Reduktion einen Algorithmus zur Berechnung vom Logarithmus zur Basis \(a\).
 	
-	Heute scheint uns dieses Problem künstlich und konstruiert zu sein, aber vor nicht all zu langer Zeit war das tatsächlich praxisrelevant. Bevor die modernen Taschenrechner erschienen, die Logarithmen in jeder Basis berechnen können, haben Ingenieure täglich mit Tabellen gearbeitet, die die Logarithmen zur Basis \(10\) für sehr viele Zahlen aufgelistet haben. Manchmal brauchten sie den Logarithmus zu einer anderen Basis, die nicht tabelliert war; Das konnten sie aber einfach aus den Werten aus der Tabelle berechnen.
+	Heute scheint uns dieses Problem künstlich und konstruiert zu sein, aber vor nicht all zu langer Zeit war das tatsächlich praxisrelevant. Bevor die modernen Taschenrechner erschienen, die Logarithmen in jeder Basis berechnen können, haben Ingenieure täglich mit Tabellen gearbeitet, die die Logarithmen zur Basis \(10\) für sehr viele Zahlen aufgelistet haben. Manchmal brauchten sie den Logarithmus zu einer anderen Basis, die nicht tabelliert war; das konnten sie aber einfach aus den Werten der Tabelle berechnen.
 	
-	Zur Erinnerung, der Logarithmus ist bijektiv für \(x \neq 0\) und es gelten folgende Rechenregeln:
+	Zur Erinnerung, der Logarithmus ist bijektiv für \(x \geq 0\) und es gelten folgende Rechenregeln:
 	\begin{enumerate}[(a)]
 		\item \( log(x \cdot y) = log(x) + log(y) \)
 		\item \( log(x^y) = y \cdot log(x) \)
@@ -100,7 +100,7 @@
 
 Bezeichnen wir durch \(U_B\) das Problem, den Logarithmus zur Basis \(b\) zu berechnen und durch \(U_A\) das Problem, den Logarithmus zur Basis \(a\) zu berechnen. Wir werden \(U_A \leq_{Alg} U_B\) zeigen, d.h. \(U_A\) auf \(U_B\) reduzieren. Dafür müssen wir und einen Algorithmus \(A\) konstruieren, welcher den gegebenen Algorithmus \(B\) benutzt und den Logarithmus zur Basis \(a\) berechnet.
 
-Wir möchten also \(log_a(x)\) berechnen und können dafür den Logarithmus zur Basis \(b\) von beliebigen Zahlen mit dem Algorithmus \(B\) berechnen. Sei \(y = log_a(x)\). Dann, aus der Definition von Logarithmus, muss \(a^y = x\) sein. Da nach Annahme \(x \neq 0 \), können wir auf beiden Seiten der Gleichung die bijektive Funktion \(log_b\) anwenden, ohne dass sich die Menge der Resultate ändert.
+Wir möchten also \(log_a(x)\) berechnen und können dafür den Logarithmus zur Basis \(b\) von beliebigen Zahlen mit dem Algorithmus \(B\) berechnen. Sei \(y = log_a(x)\). Dann, aus der Definition des Logarithmus, muss \(a^y = x\) sein. Da nach Annahme \(x \geq 0 \), können wir auf beiden Seiten der Gleichung die bijektive Funktion \(log_b\) anwenden, ohne dass sich die Menge der Resultate ändert.
 \begin{alignat*}{3}
 a^y &= x & \\
 log_b(a^y) &= log_b(x) & \\
@@ -131,13 +131,13 @@ Wir haben alle schon mal von der Quadratur des Kreises gehört und dass es unmö
 	\caption{Quadratur des Kreises: konstruiere mit Zirkel und Lineal ein Quadrat mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
 \end{figure}
 
-Betrachte das Problem der ''Triangularisierung'' des Kreises. Dieses Problem bezeichenen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich viele Schritten ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
+Betrachte das Problem der ''Triangularisierung'' des Kreises. Dieses Problem bezeichnen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich viele Schritten ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises1.png}
-	\caption{''Triangularisierung'' des Kreises: konstruiere mit Zirkel und Lineal ein rechtwinckliges gleichschenkliges Dreieck mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
+	\caption{''Triangularisierung'' des Kreises: konstruiere mit Zirkel und Lineal ein rechtwinkliges gleichschenkliges Dreieck mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
 \end{figure}
-Beweise mittels Reduktion, dass es keinen ZL-Algorithmus zur ''Triangularisierung'' des Kreises existiert.
+Beweise mittels Reduktion, dass kein ZL-Algorithmus zur ''Triangularisierung'' des Kreises existiert.
 \end{problem}
 
 %------------------------------------------------
@@ -146,11 +146,11 @@ Beweise mittels Reduktion, dass es keinen ZL-Algorithmus zur ''Triangularisierun
 
 Wir wissen, dass es keinen ZL-Algorithmus für \(Q_{\bigcirc}\) gibt und möchten diese Tatsache benutzen, um zu zeigen, dass es keinen ZL-Algorithmus für \(D_{\bigcirc}\) gibt.
 
-Wir gehen dabei vor wie bei der Methode vom indirekten Beweis: Wir nehmen das Gegenteil von dem an, was wir beweisen möchten, und folgern daraus etwas Falsches. Das impliziert, dass unsere Annahme falsch sein muss, und somit haben wir genau das bewiesen, was wir wirklich beweisen wollten.
+Wir nutzen dabei die Methode des indirekten Beweises: Wir nehmen das Gegenteil von dem an, was wir beweisen möchten, und folgern daraus etwas Falsches. Das impliziert, dass unsere Annahme falsch sein muss, und somit haben wir genau das bewiesen, was wir wirklich beweisen wollten.
 
-In diesem Fall nehmen wir also an, dass wir einen ZL-Algorithmus für \(D_{bigcirc}\) haben und konstruiren daraus einen ZL-Algorithmus für \(Q_{bigcirc}\). Da es keinen solchen Algorithmus gibt, muss unsere Annahme falsch sein.
+In diesem Fall nehmen wir also an, dass wir einen ZL-Algorithmus für \(D_{\bigcirc}\) haben und konstruieren daraus einen ZL-Algorithmus für \(Q_{\bigcirc}\). Da es keinen solchen Algorithmus gibt, muss unsere Annahme falsch sein.
 
-Wir reduzieren also \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\) und zeigen \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\). Aus \(Q_{bigcirc} \leq_{Alg} D_{bigcirc}\) und \(Q_{\bigcirc}\) unlösbar folgern wir, dass \(D_{\bigcirc}\) auch unlösbar sein muss.
+Wir reduzieren also \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\) und zeigen \(Q_{\bigcirc} \leq_{Alg} D_{\bigcirc}\). Aus \(Q_{\bigcirc} \leq_{Alg} D_{\bigcirc}\) und \(Q_{\bigcirc}\) unlösbar folgern wir, dass \(D_{\bigcirc}\) auch unlösbar sein muss.
 
 Sei \(A_d\) ein ZL-Algorithmus, welcher \(D_{\bigcirc}\) löst. Diesen Algorithmus benutzen wir, um einen ZL-Algorithmus \(A_q\) für \(Q_{\bigcirc}\) zu konstruieren. Dafür müssen wir mit Zirkel und Lineal in endlich vielen Schritten ein Quadrat konstruieren, welches den gleichen Flächeninhalt von einem gegebenem rechtwinkligem gleichschenkligem Dreieck hat.
 
@@ -174,7 +174,7 @@ Somit haben wir den ZL-Algorithmus \(A_q\) aus \(A_d\) konstruiert, welcher die 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{Negativ.png}
-	\caption{Reduktion von \(Q_{bigcirc}\) auf \(D_{bigcirc}\).}
+	\caption{Reduktion von \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\).}
 \end{figure}
 
 
