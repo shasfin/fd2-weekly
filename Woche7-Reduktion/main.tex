@@ -123,19 +123,19 @@ Den Algorithmus \(A\) konstruieren wir folgendermassen: Wir benutzen den Algorit
 \section*{Aufgabe zur Reduktion im 'negativen' Sinne}
 
 \begin{problem}
-Wir haben alle schon mal von der Quadratur des Kreises gehört und dass es unmöglich sein soll. Genauer, das Problem \(Q_{\bigcirc}\) besteht darin, mit Zirkel und Lineal in endlich vielen Schritten aus einem gegebenem Kreis ein Quadrat mit gleichem Flächeninhalt zu konstruieren. Der Beweis, dass es keinen ZL-Algorithmus (Zirkel-Lineal Algorithmus) für \(Q_{\bigcirc}\) gibt, ist nicht trivial und wir glauben an dieser Stelle den Mathematikern, die es bewiesen haben.
+Wir haben alle schon mal von der Quadratur des Kreises gehört und dass es unmöglich sein soll. Genauer, das Problem \(Q_{\bigcirc}\) besteht darin, mit Zirkel und Lineal in endlich vielen Schritten aus einem gegebenen Kreis ein Quadrat mit gleichem Flächeninhalt zu konstruieren. Der Beweis, dass es keinen ZL-Algorithmus (Zirkel-Lineal Algorithmus) für \(Q_{\bigcirc}\) gibt, ist nicht trivial und wir glauben an dieser Stelle den Mathematikern, die es bewiesen haben.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{Negativ-QuadraturDesKreises1.png}
-	\caption{Quadratur des Kreises: konstruiere mit Zirkel und Lineal ein Quadrat mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
+	\caption{Quadratur des Kreises: konstruiere mit Zirkel und Lineal ein Quadrat mit dem gleichen Flächeninhalt von einem gegebenen Kreis.}
 \end{figure}
 
-Betrachte das Problem der ''Triangularisierung'' des Kreises. Dieses Problem bezeichnen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich viele Schritten ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
+Betrachte das Problem der ''Triangularisierung'' des Kreises. Dieses Problem bezeichnen wir mit \(D_{\bigcirc}\) und definieren wie folgt: Gegeben ein Kreis, konstruiere mit Zirkel und Lineal in endlich vielen Schritte ein rechtwinkliges gleichschenkliges Dreieck, so dass das Dreieck und der Kreis den gleichen Flächeninhalt haben.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{Negativ-TriangulaturDesKreises1.png}
-	\caption{''Triangularisierung'' des Kreises: konstruiere mit Zirkel und Lineal ein rechtwinkliges gleichschenkliges Dreieck mit dem gleichen Flächeninhalt von einem gegebenem Kreis.}
+	\caption{''Triangularisierung'' des Kreises: konstruiere mit Zirkel und Lineal ein rechtwinkliges gleichschenkliges Dreieck mit dem gleichen Flächeninhalt von einem gegebenen Kreis.}
 \end{figure}
 Beweise mittels Reduktion, dass kein ZL-Algorithmus zur ''Triangularisierung'' des Kreises existiert.
 \end{problem}
@@ -152,7 +152,7 @@ In diesem Fall nehmen wir also an, dass wir einen ZL-Algorithmus für \(D_{\bigc
 
 Wir reduzieren also \(Q_{\bigcirc}\) auf \(D_{\bigcirc}\) und zeigen \(Q_{\bigcirc} \leq_{Alg} D_{\bigcirc}\). Aus \(Q_{\bigcirc} \leq_{Alg} D_{\bigcirc}\) und \(Q_{\bigcirc}\) unlösbar folgern wir, dass \(D_{\bigcirc}\) auch unlösbar sein muss.
 
-Sei \(A_d\) ein ZL-Algorithmus, welcher \(D_{\bigcirc}\) löst. Diesen Algorithmus benutzen wir, um einen ZL-Algorithmus \(A_q\) für \(Q_{\bigcirc}\) zu konstruieren. Dafür müssen wir mit Zirkel und Lineal in endlich vielen Schritten ein Quadrat konstruieren, welches den gleichen Flächeninhalt von einem gegebenem rechtwinkligem gleichschenkligem Dreieck hat.
+Sei \(A_d\) ein ZL-Algorithmus, welcher \(D_{\bigcirc}\) löst. Diesen Algorithmus benutzen wir, um einen ZL-Algorithmus \(A_q\) für \(Q_{\bigcirc}\) zu konstruieren. Dafür müssen wir mit Zirkel und Lineal in endlich vielen Schritte ein Quadrat konstruieren, welches den gleichen Flächeninhalt von einem gegebenem rechtwinkligem gleichschenkligem Dreieck hat.
 
 Möglich wäre folgende Abfolge:
 \begin{figure}[H]
