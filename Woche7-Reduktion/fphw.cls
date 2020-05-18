@@ -57,10 +57,10 @@
     
 % we hardcode some language options
 \DeclareOption{german}{
-    \renewcommand{\CourseLang}{Fach}
-    \renewcommand{\ProfessorLang}{Professor}
+    \renewcommand{\CourseLang}{}
+    \renewcommand{\ProfessorLang}{Fachliches und fachdidaktisches Review}
     \renewcommand{\DateLang}{Abgabedatum}
-    \renewcommand{\StudentLang}{Studentin}
+    \renewcommand{\StudentLang}{Autor}
 }
 
 \PassOptionsToClass{a4paper}{article}
@@ -116,10 +116,8 @@
         \vspace{8pt}
         \hrule
         \vspace{10pt}
-        \ifx\classlocal\undefined{}\else\CourseLang: {\itshape \classlocal{} \ifx\professorloc\undefined{}\else{-- }\fi  }\fi
+        \ifx\classlocal\undefined{}\else\CourseLang { \classlocal{} \ifx\professorloc\undefined{}\else{\\ }\fi  }\fi
         \ifx\professorloc\undefined{}\else{\ProfessorLang: {\itshape\professorloc}}\fi 
-        \\
-        \DateLang: {\itshape\@date}
         \vspace{20pt}
     \end{center}
 }
